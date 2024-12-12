@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-header>
+    <button mat-raised-button color="primary" type="button" (click)="addetudiant()">add New</button>
+  </mat-card-header>
+
+  <mat-card-content>
+    <table mat-table [dataSource]="datatable" class="mat-elevation-z8">
+
+      <!-- Nom Column -->
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+      </ng-container>
+
+      <!-- Prénom Column -->
+      <ng-container matColumnDef="prenom">
+        <th mat-header-cell *matHeaderCellDef> Prénom </th>
+        <td mat-cell *matCellDef="let element"> {{element.prenom}} </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <!-- Niveau Column -->
+      <ng-container matColumnDef="niveau">
+        <th mat-header-cell *matHeaderCellDef> Niveau </th>
+        <td mat-cell *matCellDef="let element"> {{element.niveau}} </td>
+      </ng-container>
+
+      <!-- Inscription Column -->
+      <ng-container matColumnDef="inscription">
+        <th mat-header-cell *matHeaderCellDef> Inscription </th>
+        <td mat-cell *matCellDef="let element"> {{element.inscription | date}} </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button type="button" color="primary" (click)="EditEtudiant(element.id)">Edit</button>
+          <button mat-button type="button" color="accent" (click)="DeletEtudiant(element.id)">Delete</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+

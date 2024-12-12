@@ -1,0 +1,36 @@
+{
+  "etudiant": [
+    {
+      "id": "396b",
+      "nom": "SIHAMOUDINE",
+      "prenom": "Mohamed Anzize",
+      "niveau": "Licence",
+      "inscription": "2024-12-12T10:44:14.749Z",
+      "email": "sihamoudineanzize@gmail.com"
+    },
+    {
+      "id": "fc4b",
+      "nom": "HABIB",
+      "prenom": "Assoumani",
+      "niveau": "Master",
+      "inscription": "2024-12-05T00:00:00.000Z",
+      "email": "hassoumani@gmail.com"
+    },
+    {
+      "id": "3de1",
+      "nom": "SAMIRA",
+      "prenom": "Youssouf",
+      "niveau": "Secondaire",
+      "inscription": "2024-12-10T00:00:00.000Z",
+      "email": "ysamira@gmail.com"
+    },
+    {
+      "id": "1234",
+      "nom": "AICHA",
+      "prenom": "Matchika",
+      "niveau": "Licence",
+      "inscription": "2024-12-12T13:56:37.958Z",
+      "email": "maicha@gmail.com"
+    }
+  ]
+}

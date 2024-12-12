@@ -1,0 +1,47 @@
+<form [formGroup]="etudForm" (ngSubmit)="enregistrer()">
+  <mat-card>
+    <mat-card-header>
+      <h2>{{ title }}</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nom" placeholder="Nom" aria-label="Nom">
+        <mat-error *ngIf="etudForm.get('nom')?.hasError('required')">Le nom est requis</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="prenom" placeholder="Prénom" aria-label="Prénom">
+        <mat-error *ngIf="etudForm.get('prenom')?.hasError('required')">Le prénom est requis</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email" aria-label="Email">
+        <mat-error *ngIf="etudForm.get('email')?.hasError('required')">L'email est requis</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Niveau</mat-label>
+        <input matInput formControlName="niveau" placeholder="Niveau" aria-label="Niveau">
+        <mat-error *ngIf="etudForm.get('niveau')?.hasError('required')">Le niveau est requis</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Date d'inscription</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="inscription" placeholder="Date d'inscription"
+          aria-label="Date d'inscription">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="etudForm.get('inscription')?.hasError('required')">La date d'inscription est
+          requise</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="etudForm.invalid">
+        {{ isEdit ? 'Modifier' :'Ajouter' }}
+      </button>
+      <a mat-raised-button color="accent" (click)="closepopup()">Annuler</a>
+    </mat-card-content>
+  </mat-card>
+</form>
